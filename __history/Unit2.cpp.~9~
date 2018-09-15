@@ -1,0 +1,228 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit2.h"      	//DESPLZAMIENTO
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm2 *Form2;
+//---------------------------------------------------------------------------
+__fastcall TForm2::TForm2(TComponent* Owner)
+	: TForm(Owner)
+{
+	RichEdit1->Text = "";
+	RichEdit2->Text = "";
+	RichEdit3->Text = "";
+	RichEdit4->Text = "";
+}
+
+
+// --------------------------- METODOS AUXILIARES ---------------------------
+
+
+String limpiarCadena(String mensaje){
+	String resultado = "";
+	mensaje = mensaje.UpperCase();
+	String c = " ";
+	for(int i = 1; i <= mensaje.Length(); i++){
+		c = mensaje[i];
+		if(c >= "A" && c <= "Z"){
+		   resultado = resultado + c;
+		}else{
+			if(c == "Á"){
+				resultado = resultado + "A";
+			}else{
+				if(c == "É"){
+					resultado = resultado + "E";
+				}else{
+					if(c == "Í"){
+						resultado = resultado + "I";
+					}else{
+						if(c == "Ó"){
+							resultado = resultado + "O";
+						}else{
+							 if(c == "Ú" || c == "Ü"){
+								resultado = resultado + "U";
+							}else{
+								if(c == "Ñ"){
+									resultado = resultado + "Ñ";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return resultado;
+
+}
+
+
+String limpiarCadenaI(String mensaje){
+	String resultado = "";
+	mensaje = mensaje.UpperCase();
+	String c = " ";
+	for(int i = 1; i <= mensaje.Length(); i++){
+		c = mensaje[i];
+		if(c >= "A" && c <= "Z"){
+		   resultado = resultado + c;
+		}else{
+			if(c == "Á"){
+				resultado = resultado + "A";
+			}else{
+				if(c == "É"){
+					resultado = resultado + "E";
+				}else{
+					if(c == "Í"){
+						resultado = resultado + "I";
+					}else{
+						if(c == "Ó"){
+							resultado = resultado + "O";
+						}else{
+							 if(c == "Ú" || c == "Ü"){
+								resultado = resultado + "U";
+							}else{
+								if(c == "Ñ"){
+									resultado = resultado + "N";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return resultado;
+
+}
+
+String nuevoABC(String clave){
+
+	String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+	String c = limpiarCadena(clave);
+	String n = c[1];
+
+	for(int i = 1; i <= c.Length(); i++){
+		if(n.Pos(c[i]) <= 0){
+			n = n + c[i];
+		}
+	}
+
+	for(int i = 1; i <= alfabeto.Length(); i++){
+		if(n.Pos(alfabeto[i]) <= 0){
+			n = n + alfabeto[i];
+		}
+	}
+
+	return n;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::Cifrar1Click(TObject *Sender)
+{
+	//Desplazamiento Puro (Cesar) -- Cifrado
+	String texto = RichEdit1->Text;
+	texto = limpiarCadena(texto);
+
+	String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+
+	String cifrado = "";
+	int posLetra = 0;
+	int nuevaPos = 0;
+	int desplazamiento = 3;
+	desplazamiento = StrToInt(InputBox("Ingresar desplazamiento", "Desplazamiento", "1"));
+
+	for(int i = 1; i <= texto.Length(); i++){
+		posLetra = alfabeto.Pos(texto[i]);
+		nuevaPos = ((posLetra + desplazamiento - 1) % 27) + 1;
+		cifrado = cifrado + alfabeto[nuevaPos];
+	}
+
+	RichEdit2->Text = cifrado;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Descifrar1Click(TObject *Sender)
+{
+	//Desplazamiento Puro (Cesar) -- Descifrado
+	String texto = RichEdit2->Text;
+	RichEdit3->Text = texto;
+	texto = limpiarCadena(texto);
+
+	String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+
+	String descifrado = "";
+	int posLetra = 0;
+	int nuevaPos = 0;
+
+	int desplazamiento = 3;
+	desplazamiento = StrToInt(InputBox("Ingresar desplazamiento", "Desplazamiento", "1"));
+
+	for(int i = 1; i <= texto.Length(); i++){
+		posLetra = alfabeto.Pos(texto[i]);
+		nuevaPos = ((posLetra - desplazamiento + 27 - 1) % 27) + 1;
+		descifrado = descifrado + alfabeto[nuevaPos];
+	}
+
+	RichEdit4->Text = descifrado;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Cifrar2Click(TObject *Sender)
+{
+	//Desplazamiento con Clave (Cesar) -- Cifrado
+    String clave = InputBox("Clave", "Clave: ", "Clave");
+	String alfabeto = nuevoABC(clave);
+
+    String texto = RichEdit1->Text;
+	texto = limpiarCadena(texto);
+
+	String cifrado = "";
+	int posLetra = 0;
+	int nuevaPos = 0;
+	int desplazamiento = 3;
+	desplazamiento = StrToInt(InputBox("Ingresar desplazamiento", "Desplazamiento", "1"));
+
+	for(int i = 1; i <= texto.Length(); i++){
+		posLetra = alfabeto.Pos(texto[i]);
+		nuevaPos = ((posLetra + desplazamiento - 1) % 27) + 1;
+		cifrado = cifrado + alfabeto[nuevaPos];
+	}
+
+	RichEdit2->Text = cifrado;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Descifrar2Click(TObject *Sender)
+{
+	//Desplazamiento con Clave (Cesar) -- Descifrado
+
+	String clave = InputBox("Clave", "Clave: ", "Clave");
+	String alfabeto = nuevoABC(clave);
+
+    String texto = RichEdit1->Text;
+	texto = limpiarCadena(texto);
+
+	String descifrado = "";
+	int posLetra = 0;
+	int nuevaPos = 0;
+
+	int desplazamiento = 3;
+	desplazamiento = StrToInt(InputBox("Ingresar desplazamiento", "Desplazamiento", "1"));
+
+	for(int i = 1; i <= texto.Length(); i++){
+		posLetra = alfabeto.Pos(texto[i]);
+		nuevaPos = ((posLetra - desplazamiento + 27 - 1) % 27) + 1;
+		descifrado = descifrado + alfabeto[nuevaPos];
+	}
+
+	RichEdit2->Text = descifrado;
+}
+//---------------------------------------------------------------------------
+
