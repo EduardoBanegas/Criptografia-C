@@ -7,10 +7,35 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.Menus.hpp>
 //---------------------------------------------------------------------------
 class TForm3 : public TForm
 {
 __published:	// IDE-managed Components
+	TMainMenu *MainMenu1;
+	TMenuItem *Grupo1;
+	TMenuItem *Cifrar1;
+	TMenuItem *Descifrar1;
+	TMenuItem *Serie1;
+	TMenuItem *Cifrar2;
+	TMenuItem *Descifrar2;
+	TMenuItem *Columnas1;
+	TMenuItem *Cifrar3;
+	TMenuItem *Descifrar3;
+	TMenuItem *Filas1;
+	TMenuItem *Cifrar4;
+	TMenuItem *Descifrar4;
+	TMenuItem *ZigZag1;
+	TMenuItem *Cifrar5;
+	TMenuItem *Descifrar5;
+	TLabel *Label1;
+	TLabel *Label2;
+	TLabel *Label3;
+	TRichEdit *RichEdit1;
+	TRichEdit *RichEdit2;
+	TRichEdit *RichEdit3;
+	TRichEdit *RichEdit4;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);
