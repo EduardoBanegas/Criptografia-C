@@ -43,6 +43,8 @@ __published:	// IDE-managed Components
 	void __fastcall Descifrar3Click(TObject *Sender);
 	void __fastcall Cifrar4Click(TObject *Sender);
 	void __fastcall Descifrar4Click(TObject *Sender);
+	void __fastcall Cifrar5Click(TObject *Sender);
+	void __fastcall Descifrar5Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);

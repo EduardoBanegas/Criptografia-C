@@ -150,9 +150,11 @@ object Form3: TForm3
       Caption = 'Zig-Zag'
       object Cifrar5: TMenuItem
         Caption = 'Cifrar'
+        OnClick = Cifrar5Click
       end
       object Descifrar5: TMenuItem
         Caption = 'Descifrar'
+        OnClick = Descifrar5Click
       end
     end
   end

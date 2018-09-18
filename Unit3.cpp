@@ -175,6 +175,18 @@ int cantImpares(int n){
 	}
 	return c;
 }
+
+
+String rellenoZigZag(String texto, int filas){
+	int elementos = (filas * 2) - 2;
+	while(true){
+		if(texto.Length() % elementos == 0){
+			break;
+		}
+		texto = texto + "X";
+	}
+	return texto;
+}
 //-------------------------------------------------------------------------------
 void __fastcall TForm3::Cifrar1Click(TObject *Sender)
 {
@@ -476,6 +488,108 @@ void __fastcall TForm3::Descifrar4Click(TObject *Sender)
 		}
 	}
 
+
+	RichEdit4->Text = descifrado;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm3::Cifrar5Click(TObject *Sender)
+{
+	// Cifrado Zig Zag
+	String texto = RichEdit1->Text;
+	int filas = StrToInt(InputBox("Filas", "Filas: ", "3"));
+	texto  = rellenoZigZag(limpiarCadena(texto), filas);
+	int f = 1;
+	int c = 1;
+	bool sw = true;
+	String matriz[100][500];
+
+	for(int i = 1; i <= filas; i++){
+		for(int j = 1; j <= texto.Length(); j++){
+			matriz[i][j] = "";
+		}
+	}
+
+
+	for(int i = 1; i <= texto.Length(); i++){
+		matriz[f][c] = texto[i];
+		//desciende
+		if(sw){
+			if(f != filas){
+				f++;
+			} else {
+				sw = false;
+				f--;
+			}
+		}else{
+			if(f != 1){
+				f--;
+			} else {
+				sw = true;
+				f++;
+			}
+		}
+		c++;
+	}
+
+	String cifrado = "";
+	for(int i = 1; i <= filas; i++){
+		for(int j = 1; j <= texto.Length(); j++){
+			cifrado = cifrado + matriz[i][j];
+		}
+	}
+
+	RichEdit2->Text = cifrado;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm3::Descifrar5Click(TObject *Sender)
+{
+	// Descifrado Zig Zag
+
+	String texto = RichEdit2->Text;
+	RichEdit3->Text = texto;
+	int filas = StrToInt(InputBox("Filas", "Filas: ", "3"));
+
+	String descifrado = "";
+
+	//inicializando
+	int msgLen = texto.Length(), i, j, k = -1, row = 1, col = 1, m = 1;
+	String railMatrix[100][500];
+
+	//matriz vacia
+	for(i = 1; i <= filas; ++i)
+		for(j = 1; j <= msgLen; ++j)
+			railMatrix[i][j] = "";
+
+	//rellenar con * el zig zag
+	for(i = 1; i <= msgLen; ++i){
+		railMatrix[row][col++] = "*";
+
+		if(row == 1 || row == filas)
+			k= k * (-1);
+
+        row = row + k;
+    }
+
+	//Reemplazando * por el texto
+	for(i = 1; i <= filas; ++i)
+		for(j = 1; j <= msgLen; ++j)
+			if(railMatrix[i][j] == "*")
+				railMatrix[i][j] = texto[m++];
+
+	row = col = 1;
+	k = -1;
+
+    //Leyendo en zig zag
+	for(i = 1; i <= msgLen; ++i){
+		descifrado = descifrado + railMatrix[row][col++];
+
+		if(row == 1 || row == filas)
+			k= k * (-1);
+
+        row = row + k;
+	}
 
 	RichEdit4->Text = descifrado;
 }
