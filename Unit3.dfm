@@ -107,6 +107,7 @@ object Form3: TForm3
       Caption = 'Grupo'
       object Cifrar1: TMenuItem
         Caption = 'Cifrar'
+        OnClick = Cifrar1Click
       end
       object Descifrar1: TMenuItem
         Caption = 'Descifrar'
@@ -116,27 +117,33 @@ object Form3: TForm3
       Caption = 'Serie'
       object Cifrar2: TMenuItem
         Caption = 'Cifrar'
+        OnClick = Cifrar2Click
       end
       object Descifrar2: TMenuItem
         Caption = 'Descifrar'
+        OnClick = Descifrar2Click
       end
     end
     object Columnas1: TMenuItem
       Caption = 'Columnas'
       object Cifrar3: TMenuItem
         Caption = 'Cifrar'
+        OnClick = Cifrar3Click
       end
       object Descifrar3: TMenuItem
         Caption = 'Descifrar'
+        OnClick = Descifrar3Click
       end
     end
     object Filas1: TMenuItem
       Caption = 'Filas'
       object Cifrar4: TMenuItem
         Caption = 'Cifrar'
+        OnClick = Cifrar4Click
       end
       object Descifrar4: TMenuItem
         Caption = 'Descifrar'
+        OnClick = Descifrar4Click
       end
     end
     object ZigZag1: TMenuItem

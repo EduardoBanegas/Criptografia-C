@@ -36,6 +36,13 @@ __published:	// IDE-managed Components
 	TRichEdit *RichEdit2;
 	TRichEdit *RichEdit3;
 	TRichEdit *RichEdit4;
+	void __fastcall Cifrar1Click(TObject *Sender);
+	void __fastcall Cifrar2Click(TObject *Sender);
+	void __fastcall Descifrar2Click(TObject *Sender);
+	void __fastcall Cifrar3Click(TObject *Sender);
+	void __fastcall Descifrar3Click(TObject *Sender);
+	void __fastcall Cifrar4Click(TObject *Sender);
+	void __fastcall Descifrar4Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);
