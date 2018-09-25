@@ -101,6 +101,15 @@ object Form2: TForm2
     TabOrder = 3
     Zoom = 100
   end
+  object Button1: TButton
+    Left = 718
+    Top = 363
+    Width = 75
+    Height = 25
+    Caption = 'Limpiar'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
   object MainMenu1: TMainMenu
     Left = 8
     Top = 16

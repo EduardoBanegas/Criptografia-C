@@ -227,3 +227,12 @@ void __fastcall TForm2::Descifrar2Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm2::Button1Click(TObject *Sender)
+{
+	RichEdit1->Text = "";
+	RichEdit2->Text = "";
+	RichEdit3->Text = "";
+	RichEdit4->Text = "";
+}
+//---------------------------------------------------------------------------
+

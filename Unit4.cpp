@@ -212,3 +212,12 @@ void __fastcall TForm4::Descifrar2Click(TObject *Sender)
 	RichEdit4->Text = descifrado;
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm4::Button1Click(TObject *Sender)
+{
+	RichEdit1->Text = "";
+	RichEdit2->Text = "";
+	RichEdit3->Text = "";
+	RichEdit4->Text = "";
+}
+//---------------------------------------------------------------------------
+

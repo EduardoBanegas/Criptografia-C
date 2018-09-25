@@ -94,6 +94,15 @@ object Form4: TForm4
     TabOrder = 3
     Zoom = 100
   end
+  object Button1: TButton
+    Left = 702
+    Top = 363
+    Width = 75
+    Height = 25
+    Caption = 'Limpiar'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
   object MainMenu1: TMainMenu
     Top = 368
     object MonoAlfabetico1: TMenuItem
