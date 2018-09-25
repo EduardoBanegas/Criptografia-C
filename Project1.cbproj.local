@@ -1,26 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2018/08/31 15:07:32.000.585,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2018/08/31 15:07:32.000.571,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2018/09/14 13:42:06.000.165,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018/08/31 15:07:32.000.585,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2018/09/14 13:42:06.000.180,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2018/09/14 13:50:10.000.917,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018/09/14 13:42:06.000.165,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2018/09/14 13:50:10.000.899,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018/09/14 13:50:10.000.917,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2018/09/14 13:50:28.000.422,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
-    <Transaction>2018/09/14 13:51:13.000.357,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit1.cpp=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2018/09/14 13:51:13.000.357,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit1.dfm=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2018/09/14 13:51:13.000.357,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit1.h=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
-    <Transaction>2018/09/14 13:51:15.000.553,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit2.dfm=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2018/09/14 13:51:13.000.357,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit1.cpp=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2018/09/14 13:51:15.000.553,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit2.h=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit2.h</Transaction>
     <Transaction>2018/09/14 13:51:15.000.553,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit2.cpp=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2018/09/14 13:51:15.000.553,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit2.dfm=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
     <Transaction>2018/09/14 13:51:17.000.509,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Project1PCH1.h=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2018/09/14 13:51:18.000.628,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Project1.cbproj=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>2018/09/14 13:55:26.000.084,=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit3.cpp</Transaction>
-    <Transaction>2018/09/14 13:55:35.000.710,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Desplazamiento.h=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit3.h</Transaction>
-    <Transaction>2018/09/14 13:55:35.000.710,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Desplazamiento.cpp=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit3.cpp</Transaction>
     <Transaction>2018/09/14 13:55:35.000.710,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Desplazamiento.dfm=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit3.dfm</Transaction>
+    <Transaction>2018/09/14 13:55:35.000.710,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Desplazamiento.cpp=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit3.cpp</Transaction>
+    <Transaction>2018/09/14 13:55:35.000.710,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Desplazamiento.h=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit3.h</Transaction>
     <Transaction>2018/09/14 13:57:59.000.487,D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Desplazamiento.cpp=</Transaction>
     <Transaction>2018/09/15 19:37:12.000.459,=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit3.cpp</Transaction>
+    <Transaction>2018/09/24 23:29:24.464,=D:\Universidad\Criptografia y Seguridad\Proyecto\Cripto\Unit4.cpp</Transaction>
+    <Transaction>2018/09/24 23:32:15.146,=D:\Universidad\Criptografia y Seguridad\sergoti\Unit4.cpp</Transaction>
+    <Transaction>2018/09/24 23:43:06.934,D:\Universidad\Criptografia y Seguridad\sergoti\Unit4.cpp=</Transaction>
   </Transactions>
 </BorlandProject>

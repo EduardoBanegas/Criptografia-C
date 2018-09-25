@@ -111,6 +111,7 @@ object Form3: TForm3
       end
       object Descifrar1: TMenuItem
         Caption = 'Descifrar'
+        OnClick = Descifrar1Click
       end
     end
     object Serie1: TMenuItem

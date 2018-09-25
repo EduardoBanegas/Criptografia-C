@@ -193,12 +193,12 @@ void __fastcall TForm3::Cifrar1Click(TObject *Sender)
 	//CIFRAR POR GRUPO
 	String s = RichEdit1->Text;
 	String clave = "";
-	do{
-		clave = InputBox("Key o Clave", "Clave: ", "");
+//	do{
+		clave = InputBox("Key o Clave...", "Clave: ", "");
 		clave = clave.Trim();
-	} while(clave.Length() == 0);
+//	} while(clave.Length() == 0);
 
-	int const columnas = clave.Length();
+	int const columnas = clave.Length();//2
 	String mensaje = rellenar(limpiarCadena(s), columnas);
 	int const filas = mensaje.Length() / columnas;
 
@@ -206,14 +206,39 @@ void __fastcall TForm3::Cifrar1Click(TObject *Sender)
 	String matriz2[1000][20];
 
 	// Cargando matriz
+//	for(int m = 1; m <= mensaje.Length(); m++){
+//		for(int i = 1; i <= filas; i++){
+//			for(int j = 1; j <= columnas; j++){
+//				matriz[i][j] = mensaje[m];
+//				m++;
+//			}
+//		}
+//	}
+	int coll = 0;
 	for(int m = 1; m <= mensaje.Length(); m++){
-		for(int i = 1; i <= filas; i++){
-			for(int j = 1; j <= columnas; j++){
-				matriz[i][j] = mensaje[m];
-				m++;
+//		for(int i = 1; i <= filas; i++){
+			for(int j = 1; j <= clave.Length(); j++){
+				coll = StrToInt(clave[j]);
+//				matriz[i][j] = mensaje[m];
+//				m++;
+				for(int k = 1; k <= filas; k++){
+//					colX = colX + matriz[i][col];
+					matriz[k][coll] = mensaje[m];
+					m++;
+				}
 			}
-		}
+//		}
 	}
+
+//	String a = "";
+//	for (int i = 1; i <= filas; i++) {
+//		for (int j = 1; j <= columnas; j++) {
+//			 a = a + matriz[i][j];
+//		}
+//		a = a + "\n";
+//	}
+//	RichEdit2->Text = a;
+//	return;
 
 	String colX = "";
 
@@ -221,18 +246,25 @@ void __fastcall TForm3::Cifrar1Click(TObject *Sender)
 	int col = 0;
 
 	//se recorre toda la clave
-	for(int x = 1; x <= clave.Length(); x++){
+	for(int x = 1; x <= clave.Length(); x++){//35
 
 		//se copia la columna correspondiente al primer caracter de la clave
-		col = StrToInt(clave[x]);
+		col = StrToInt(clave[x]);//3
+//		RichEdit2->Text = col;
+//		return;
 		for(int i = 1; i <= filas; i++){
 			colX = colX + matriz[i][col];
 		}
-
 		//se pega en la nueva matriz recorriendo la columna copiada
 		for(int f = 1; f <= filas; f++){
 			matriz2[f][x] = colX[f];
 		}
+//		int f = 1;
+//		while (f <= filas && colX.Length() > 0){
+//			matriz2[f][x] = colX[f];
+//			f++;
+//		}
+
 		colX = "";
 	}
 
@@ -248,6 +280,7 @@ void __fastcall TForm3::Cifrar1Click(TObject *Sender)
 
 
 	RichEdit2->Text = cifrado;
+
 
 }
 //---------------------------------------------------------------------------
@@ -592,6 +625,110 @@ void __fastcall TForm3::Descifrar5Click(TObject *Sender)
 	}
 
 	RichEdit4->Text = descifrado;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm3::Descifrar1Click(TObject *Sender)
+{
+	//DESCIFRAR POR GRUPO
+	String s = RichEdit2->Text;
+	RichEdit3->Text = s;
+	String clave = "";
+//	do{
+		clave = InputBox("Key o Clave", "Clave: ", "Solo numeros [1 - 9]");
+		clave = clave.Trim();
+//	} while(clave.Length() == 0);
+
+	int const columnas = clave.Length();
+	String mensaje = rellenar(limpiarCadena(s), columnas);
+	int const filas = mensaje.Length() / columnas;
+
+	String matriz[1000][20];
+	String matriz2[1000][20];
+
+	for(int m = 1; m <= mensaje.Length(); m++){
+		for(int i = 1; i <= filas; i++){
+			for(int j = 1; j <= columnas; j++){
+				matriz[i][j] = mensaje[m];
+				m++;
+			}
+		}
+	}
+
+	// Cargando matriz
+//	int coll = 0;
+//	for(int m = 1; m <= mensaje.Length(); m++){
+////		for(int i = 1; i <= filas; i++){
+//			for(int j = 1; j <= clave.Length(); j++){
+//				coll = StrToInt(clave[j]);
+////				matriz[i][j] = mensaje[m];
+////				m++;
+//				for(int k = 1; k <= filas; k++){
+////					colX = colX + matriz[i][col];
+//					matriz[k][coll] = mensaje[m];
+//					m++;
+//				}
+//			}
+////		}
+//	}
+//	String a = "";
+//	for (int i = 1; i <= 20; i++) {
+//		for (int j = 1; j <= 20; j++) {
+//			 if (matriz[i][j] == " " || matriz[i][j] == "") {
+//				a = a + "_";
+//			 }
+//			 a = a + matriz[i][j];
+//		}
+//		a = a + "\n";
+//	}
+//	RichEdit2->Text = a;
+//	return;
+
+	String colX = "";
+
+	//copiando ordenado segun la clave
+	int col = 0;
+
+	//se recorre toda la clave
+	for(int x = 1; x <= clave.Length(); x++){
+
+		//se copia la columna correspondiente al primer caracter de la clave
+		col = StrToInt(clave[x]);
+		for(int i = 1; i <= filas; i++){
+			colX = colX + matriz[i][x];
+		}
+
+		//se pega en la nueva matriz recorriendo la columna copiada
+		for(int f = 1; f <= filas; f++){
+			matriz2[f][col] = colX[f];
+		}
+		colX = "";
+	}
+
+//	String a = "";
+//	for (int i = 1; i <= 20; i++) {
+//		for (int j = 1; j <= 20; j++) {
+////			if (matriz[i][j] == " " || matriz[i][j] == "") {
+////				a = a + "_";
+////			 }
+//			 a = a + matriz[j][i];
+//		}
+//		a = a + "\n";
+//	}
+//	RichEdit2->Text = a;
+//	return;
+
+	String cifrado = "";
+
+	for(int j = 1; j <= 20; j++){
+		for(int i = 1; i <= 20; i++){
+			cifrado = cifrado + matriz2[i][j];
+		}
+		cifrado = cifrado + " ";
+	}
+
+
+	RichEdit4->Text = cifrado;
 }
 //---------------------------------------------------------------------------
 
